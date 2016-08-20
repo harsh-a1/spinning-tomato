@@ -1,6 +1,6 @@
 library("stringi")
 
-dataset<-c(1:100)
+dataset<-c(1:1000)
 maxlen<-as.integer(nchar(as.character(max(dataset))))
 
 dataset = lapply(dataset,function(x){  
@@ -12,4 +12,8 @@ dataset = lapply(dataset,function(x){
 
 dataset = as.data.frame(do.call(rbind, strsplit(as.character(dataset),split="")))
 
-plot(dataset$V1,dataset$V2)
+#dataset = table(unlist(dataset))
+#dataset = as.data.frame(table(unlist(dataset)))
+
+plot(table(dataset$V3))
+#plot(dataset$Freq)
